@@ -3,10 +3,12 @@ package com.example.boujeeclicker;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView circle;
     TextView score;
     TextView incScore;
+    Button upgradeButton;
     AtomicInteger scoreNum;
     ConstraintLayout constraintLayout;
     int clickScore =1;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         incScore = new TextView(this);
         incScore.setId(View.generateViewId());
         circle = findViewById(R.id.circle);
+        upgradeButton = findViewById(R.id.upgradeButton);
         score = findViewById(R.id.score);
         constraintLayout = findViewById(R.id.constraint);
         final ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.5f, 1.0f, 1.5f, Animation.RELATIVE_TO_SELF, .5f, Animation.RELATIVE_TO_SELF, .5f);
@@ -38,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
                 scoreNum.getAndAdd(clickScore);
                 score.setText(scoreNum+"");
                 incScore.setText(clickScore+"");
+            }
+        });
+        upgradeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UpgradePage.class);
+                startActivity(intent);
             }
         });
     }
