@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         scoreNum = new AtomicInteger();
-        circle = findViewById(R.id.circle);
+        circle = findViewById(R.id.passive);
         upgradeButton = findViewById(R.id.upgradeButton);
         score = findViewById(R.id.score);
         constraintLayout = findViewById(R.id.constraint);
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, UpgradePage.class);
+                intent.putExtra("clickScore",  ""+clickScore);
                 startActivity(intent);
             }
         });
