@@ -8,7 +8,7 @@
     android:background="@drawable/background">
 
     <ImageView
-        android:id="@+id/circle"
+        android:id="@+id/passive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -24,7 +24,7 @@
         android:layout_height="48dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/circle"
+        app:layout_constraintBottom_toTopOf="@+id/passive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,9 +36,9 @@
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/circle"
+        app:layout_constraintEnd_toEndOf="@+id/passive"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/circle"
-        app:layout_constraintTop_toBottomOf="@+id/circle"
+        app:layout_constraintStart_toStartOf="@+id/passive"
+        app:layout_constraintTop_toBottomOf="@+id/passive"
         app:layout_constraintVertical_bias="0.294" />
 </androidx.constraintlayout.widget.ConstraintLayout>
